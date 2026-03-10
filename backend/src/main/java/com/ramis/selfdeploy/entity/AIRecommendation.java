@@ -1,6 +1,6 @@
 package com.ramis.selfdeploy.entity;
 
-import jakarta.annotation.Priority;
+import com.ramis.selfdeploy.enums.Priority;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -27,7 +27,7 @@ public class AIRecommendation {
     private Project project;
 
     @Column(nullable = false, length = 100)
-    private String recommendationType; // OPTIMIZATION, SECURITY ...
+    private String recommendationType; // OPTIMIZATION, SECURITY , "PERFORMANCE"
 
     @Column(columnDefinition = "text")
     private String recommendation;
