@@ -30,6 +30,7 @@
 		<java.version>17</java.version>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
+		<jgit.version>6.4.0.202211300538-r</jgit.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -39,6 +40,20 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- JGit для работы с Git репозиториями -->
+		<dependency>
+			<groupId>org.eclipse.jgit</groupId>
+			<artifactId>org.eclipse.jgit</artifactId>
+			<version>${jgit.version}</version>
+		</dependency>
+
+		<!-- CredentialsProvider для GitHub token -->
+		<dependency>
+			<groupId>org.eclipse.jgit</groupId>
+			<artifactId>org.eclipse.jgit.http.apache</artifactId>
+			<version>${jgit.version}</version>
 		</dependency>
 
 		<dependency>
