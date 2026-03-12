@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
         @Index(name = "idx_project_id_rec", columnList = "project_id"),
         @Index(name = "idx_priority", columnList = "priority")
 })
-@Data
+@Data         // getters + toString + equals
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -41,6 +41,7 @@ public class AIRecommendation {
 
     private Integer confidenceScore; // 0-100
 
+    @Column(nullable = false)
     private Boolean isImplemented = false;
 
     @CreationTimestamp
@@ -48,4 +49,8 @@ public class AIRecommendation {
 
     @Column(length = 50)
     private String recommendedTool; // SonarQube, OWASP, K8s, etc.
+
+    public void setImplemented(boolean implemented) {
+        this.isImplemented = implemented;
+    }
 }
